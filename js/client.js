@@ -183,11 +183,13 @@ var cardButtonCallback = function(t){
 };
 
 // We need to call initialize to get all of our capability handles set up and registered with Trello
-TrelloPowerUp.initialize({
+TrelloPowerUp.initialize(
+  /*
+  {
   'card-badges': function(t, options){
     return getBadges(t);
   },
-  /*
+  
   'card-buttons': function(t, options) {
     return [{
       // usually you will provide a callback function to be run on button click
@@ -202,10 +204,10 @@ TrelloPowerUp.initialize({
       url: 'https://developers.trello.com',
       target: 'Trello Developer Site' // optional target for above url
     }];
-  },
+  },*/
   'card-detail-badges': function(t, options) {
     return getBadges(t);
-  },*/
+  },
   'show-settings': function(t, options){
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
     // what should Trello show. We highly recommend the popup in this case as

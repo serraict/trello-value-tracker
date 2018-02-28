@@ -202,10 +202,10 @@ TrelloPowerUp.initialize({
       url: 'https://developers.trello.com',
       target: 'Trello Developer Site' // optional target for above url
     }];
-  },*/
+  },
   'card-detail-badges': function(t, options) {
     return getBadges(t);
-  },
+  },*/
   'show-settings': function(t, options){
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
     // what should Trello show. We highly recommend the popup in this case as

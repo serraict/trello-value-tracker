@@ -85,6 +85,8 @@ var randomBadgeColor = function() {
 };
 
 var cardButtonCallback = function(t){
+  console.log('simple callback ... ');
+  /*
   // Trello Power-Up Popups are actually pretty powerful
   // Searching is a pretty common use case, so why reinvent the wheel
   var items = ['acad', 'arch', 'badl', 'crla', 'grca', 'yell', 'yose'].map(function(parkCode){
@@ -146,6 +148,12 @@ var cardButtonCallback = function(t){
 TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
     return [{
+      // usually you will provide a callback function to be run on button click
+      // we recommend that you use a popup on click generally
+      icon: GRAY_ICON, // don't use a colored icon here
+      text: 'Open Popup',
+      callback: cardButtonCallback
+    }, {
       // but of course, you could also just kick off to a url if that's your thing
       icon: GRAY_ICON,
       text: 'Just a URL',

@@ -84,47 +84,6 @@ var randomBadgeColor = function() {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
 
-var getBadges = function(t){
-  return t.card('name')
-  .get('name')
-  .then(function(cardName){
-    console.log('We just loaded the card name for fun: ' + cardName);
-    
-    return [{
-      // its best to use static badges unless you need your badges to refresh
-      // you can mix and match between static and dynamic
-      title: 'Detail Badge', // for detail badges only
-      text: 'Static',
-      icon: GRAY_ICON, // for card front badges only
-      color: null
-    }, {
-      // card detail badges (those that appear on the back of cards)
-      // also support callback functions so that you can open for example
-      // open a popup on click
-      title: 'Popup Detail Badge', // for detail badges only
-      text: 'Popup',
-      icon: GRAY_ICON, // for card front badges only
-      callback: function(context) { // function to run on click
-        console.log('button click ... ');
-        // return context.popup({
-        //   title: 'Card Detail Badge Popup',
-        //   url: './settings.html',
-        //   height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
-        // });
-      }
-    },  {
-      // or for simpler use cases you can also provide a url
-      // when the user clicks on the card detail badge they will
-      // go to a new tab at that url
-      title: 'URL Detail Badge', // for detail badges only
-      text: 'URL',
-      icon: GRAY_ICON, // for card front badges only
-      url: 'https://trello.com/home',
-      target: 'Trello Landing Page' // optional target for above url
-    }];
-  });
-};
-
 var cardButtonCallback = function(t){
   // Trello Power-Up Popups are actually pretty powerful
   // Searching is a pretty common use case, so why reinvent the wheel
@@ -185,11 +144,6 @@ var cardButtonCallback = function(t){
 
 // We need to call initialize to get all of our capability handles set up and registered with Trello
 TrelloPowerUp.initialize({
-  /*
-  'card-badges': function(t, options){
-    return getBadges(t);
-  },
-  
   'card-buttons': function(t, options) {
     return [{
       // usually you will provide a callback function to be run on button click
@@ -204,21 +158,7 @@ TrelloPowerUp.initialize({
       url: 'https://developers.trello.com',
       target: 'Trello Developer Site' // optional target for above url
     }];
-  },*/
-  'card-detail-badges': function(t, options) {
-    return getBadges(t);
   },
-  'show-settings': function(t, options){
-    // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
-    // what should Trello show. We highly recommend the popup in this case as
-    // it is the least disruptive, and fits in well with the rest of Trello's UX
-    return t.popup({
-      title: 'Settings',
-      url: './settings.html',
-      height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
-    });
-  },
-  
   /*        
       
       🔑 Authorization Capabiltiies 🗝

@@ -5,7 +5,7 @@
   "icon": {
     "url": "./images/logo.png"
   },
-  "author": "Trello Inc",
+  "author": "serra",
   "capabilities": [
     "callback",
     "card-buttons",

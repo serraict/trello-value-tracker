@@ -152,7 +152,9 @@ TrelloPowerUp.initialize({
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
       text: 'Open Popup',
-      callback: cardButtonCallback
+      callback: function(t){
+        console.log('simple callback ... or is it?');
+      }
     }, {
       // but of course, you could also just kick off to a url if that's your thing
       icon: GRAY_ICON,

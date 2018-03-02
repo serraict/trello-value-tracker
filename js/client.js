@@ -8,7 +8,10 @@ var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
 
 var cardButtonCallback = function(t){
-  console.log('simple callback ... ');
+  return t.popup({
+    title: "Track Value",
+    url: 'value-tracker.html'
+  });
 };
 
 // We need to call initialize to get all of our capability handles set up and registered with Trello
@@ -18,7 +21,7 @@ TrelloPowerUp.initialize({
       // usually you will provide a callback function to be run on button click
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
-      text: 'Open Popup',
+      text: 'Track Value',
       callback: cardButtonCallback
     }];
   },

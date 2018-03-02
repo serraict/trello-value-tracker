@@ -3,7 +3,14 @@
 var t = TrelloPowerUp.iframe();
 
 t.render(function(){
-  t.sizeTo('#value_form').done();
+  return t.get('card', 'shared', 'value-for-me')
+  .then(function(value_for_me){
+    window.value_for_me.value.value = value_for_me;
+    console.log(`value for me: ${value_for_me}`);
+  })
+  .then(function(){
+    t.sizeTo('#value_form').done();
+  });
 });
 
 window.value_form.addEventListener('submit', function(event){

@@ -17,9 +17,13 @@ t.render(function(){
 window.value_form.addEventListener('submit', function(event){
   // Stop the browser trying to submit the form itself.
   event.preventDefault();
+
+  let _value = {
+    for_me: window.value_for_me.value, 
+    for_others: window.value_for_others.value
+  }
   return 
-    t.set('card', 'shared', 'value_for_me', window.value_for_me.value)
-      .then(return t.set('card', 'shared', 'value_for_others', window.value_for_others.value))
+    t.set('card', 'shared', 'value', _value)
       .then(function(){
         t.closePopup();
       });

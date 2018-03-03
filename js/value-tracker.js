@@ -19,13 +19,13 @@ window.value_form.addEventListener('submit', function(event){
   event.preventDefault();
 
   let _value = {
-    for_me: window.value_for_me.value, 
-    for_others: window.value_for_others.value
+    value_for_me: window.value_for_me.value, 
+    value_for_others: window.value_for_others.value
   }
 
   console.log(_value)
   return 
-    t.set('card', 'shared', 'value_for_me', _value.for_me)
+    t.set('card', 'shared', _value)
       .then(function(){
         t.closePopup();
       }, function(error){

@@ -19,7 +19,7 @@ window.value_form.addEventListener('submit', function(event){
   event.preventDefault();
   return 
     t.set('card', 'shared', 'value_for_me', window.value_for_me.value)
-      .then(t.set('card', 'shared', 'value_for_others', window.value_for_others.value))
+      .then(return t.set('card', 'shared', 'value_for_others', window.value_for_others.value))
       .then(function(){
         t.closePopup();
       });

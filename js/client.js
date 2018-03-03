@@ -15,13 +15,14 @@ var cardButtonCallback = function(t){
 };
 
 var getBadges = function(t){
-  let value_for_me=2;
-  let value_for_others=1;
-  return [{
-      text: `value: ${value_for_me}/${value_for_others}`,
+  return t.get('card', 'shared')
+  .then(function(data){
+      return [{
+      text: `value: ${data.value_for_me}/${data.value_for_others}`,
       icon: GRAY_ICON, // for card front badges only
       color: null
     }];
+  })
 }
 
 // We need to call initialize to get all of our capability handles set up and registered with Trello

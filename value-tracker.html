@@ -10,12 +10,19 @@
   <form id="value_form">
     <label for="value_for_me">Value for me:</label>
     <input name="value_for_me" id="value_for_me"
-           type="range" min="-3" max="3" step="1">
+           type="range" min="-3" max="3" step="1"
+           list="tickmarks">
     <label for="value_for_others">Value for others:</label>
     <input name="value_for_others" id="value_for_others"
-           type="range" min="-3" max="3" step="1">
+           type="range" min="-3" max="3" step="1"
+           list="tickmarks">
     <button type="submit" class="mod-primary">Save</button>
   </form>
+  <datalist id="tickmarks">
+    <option value="-3" label="-3">    
+    <option value="0" label="0">
+    <option value="3" label="3">
+  </datalist>
   <script src="./js/value-tracker.js"></script>
 </body>
 </html>

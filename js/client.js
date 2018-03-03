@@ -14,7 +14,7 @@ var cardButtonCallback = function(t){
   });
 };
 
-var getBadges = funcion(t){
+var getBadges = function(t){
   let value_for_me=2;
   let value_for_others=1;
   return [{

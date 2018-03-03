@@ -28,5 +28,7 @@ window.value_form.addEventListener('submit', function(event){
     t.set('card', 'shared', 'value_for_me', _value.for_me)
       .then(function(){
         t.closePopup();
+      }, function(error){
+        console.log(error);
       });
 });

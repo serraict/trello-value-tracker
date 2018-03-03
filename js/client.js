@@ -1,7 +1,5 @@
 /* global TrelloPowerUp */
-
 var Promise = TrelloPowerUp.Promise;
-
 
 var GLITCH_ICON = './images/glitch.svg';
 var WHITE_ICON = './images/icon-white.svg';
@@ -20,12 +18,7 @@ var getBadges = function(t){
       return [{
       text: `💎 ${data.value_for_me || '-'}/${data.value_for_others || '-'}`,
       color: null,
-      callback: function(context) {
-        return context.popup({
-          title: 'Track Value',
-          url: './value-tracker.html',
-        });
-      }
+      callback: cardButtonCallback
     }];
   })
 }
@@ -33,6 +26,9 @@ var getBadges = function(t){
 // We need to call initialize to get all of our capability handles set up and registered with Trello
 TrelloPowerUp.initialize({
   'card-badges': function(t, options){
+    return getBadges(t);
+  },
+  'card-detail-badges': function(t, options) {
     return getBadges(t);
   },
   'card-buttons': function(t, options) {

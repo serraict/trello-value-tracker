@@ -22,6 +22,8 @@ window.value_form.addEventListener('submit', function(event){
     for_me: window.value_for_me.value, 
     for_others: window.value_for_others.value
   }
+
+  console.log(_value)
   return 
     t.set('card', 'shared', 'value', _value)
       .then(function(){

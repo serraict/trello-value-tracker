@@ -14,8 +14,21 @@ var cardButtonCallback = function(t){
   });
 };
 
+var getBadges = funcion(t){
+  let value_for_me=2;
+  let value_for_others=1;
+  return [{
+      text: `value: ${value_for_me}/${value_for_others}`,
+      icon: GRAY_ICON, // for card front badges only
+      color: null
+    }];
+}
+
 // We need to call initialize to get all of our capability handles set up and registered with Trello
 TrelloPowerUp.initialize({
+  'card-badges': function(t, options){
+    return getBadges(t);
+  },
   'card-buttons': function(t, options) {
     return [{
       // usually you will provide a callback function to be run on button click

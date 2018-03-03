@@ -9,15 +9,8 @@
   <body>
     <form id="value_form">
       <label for="value_for_me">Value for me:</label>
-      <select name="value_for_me" id="value_for_me">
-        <option value="-3">-3</option>
-        <option value="-2">-2</option>
-        <option value="-1">-1</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
+      <input name="value_for_me" id="value_for_me"
+             type="range" min="-3" max="3" step="1">
       <label for="value_for_others">Value for others:</label>
       <select name="value_for_others" id="value_for_others">
         <option value="-3">-3</option>

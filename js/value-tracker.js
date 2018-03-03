@@ -5,7 +5,6 @@ var t = TrelloPowerUp.iframe();
 t.render(function(){
   return t.get('card', 'shared')
   .then(function(data){
-    console.log(data);
     window.value_for_me.value = data.value_for_me;
     window.value_for_others.value = data.value_for_others;
   })
@@ -23,7 +22,6 @@ window.value_form.addEventListener('submit', function(event){
     value_for_others: window.value_for_others.value
   }
 
-  console.log(_value)
   return t.set('card', 'shared', _value)
       .then(function(){
         t.closePopup();

@@ -24,8 +24,7 @@ window.value_form.addEventListener('submit', function(event){
   }
 
   console.log(_value)
-  return 
-    t.set('card', 'shared', _value)
+  return t.set('card', 'shared', _value)
       .then(function(){
         t.closePopup();
       }, function(error){

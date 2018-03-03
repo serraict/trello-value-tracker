@@ -18,7 +18,7 @@ var getBadges = function(t){
   return t.get('card', 'shared')
   .then(function(data){
       return [{
-      text: `value: ${data.value_for_me || '-'}/${data.value_for_others || '-'}`,
+      text: `💎 ${data.value_for_me || '-'}/${data.value_for_others || '-'}`,
       icon: GRAY_ICON, // for card front badges only
       color: null
     }];

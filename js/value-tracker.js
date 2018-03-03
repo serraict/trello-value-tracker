@@ -17,9 +17,10 @@ t.render(function(){
 window.value_form.addEventListener('submit', function(event){
   // Stop the browser trying to submit the form itself.
   event.preventDefault();
-  return t.set('card', 'shared', 'value_for_me', window.value_for_me.value)
-  .then(t.set('card', 'shared', 'value_for_others', window.value_for_others.value)
-  .then(function(){
-    t.closePopup();
-  }));
+  return 
+    t.set('card', 'shared', 'value_for_me', window.value_for_me.value)
+      .then(t.set('card', 'shared', 'value_for_others', window.value_for_others.value))
+      .then(function(){
+        t.closePopup();
+      });
 });

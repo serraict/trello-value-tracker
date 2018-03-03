@@ -19,8 +19,13 @@ var getBadges = function(t){
   .then(function(data){
       return [{
       text: `💎 ${data.value_for_me || '-'}/${data.value_for_others || '-'}`,
-      icon: GRAY_ICON, // for card front badges only
-      color: null
+      color: null,
+      callback: function(context) {
+        return context.popup({
+          title: 'Track Value',
+          url: './value-tracker.html',
+        });
+      }
     }];
   })
 }

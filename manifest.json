@@ -11,8 +11,6 @@
     "card-buttons",
     "card-badges",
     "card-detail-badges",
-    "show-authorization",
-    "authorization-status",
     "show-settings"
   ],
   "connectors": {

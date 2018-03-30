@@ -11,21 +11,36 @@ var cardButtonCallback = function(t){
   });
 };
 
+var getCoverBadges = function(t) {
+  return t.get('card', 'shared')
+  .then(function(data){
+      if(data.value_for_me || data.value_for_others) {
+        return [ getBadge(data) ];
+      } else {
+        return [];
+      }
+  })
+}
+
 var getBadges = function(t){
   return t.get('card', 'shared')
   .then(function(data){
-      return [{
+      return [ getBadge(data) ];
+  })
+}
+
+var getBadge = function (data) {
+  return {
       text: `💎 ${data.value_for_me || '-'}/${data.value_for_others || '-'}`,
       color: null,
       callback: cardButtonCallback
-    }];
-  })
+    }
 }
 
 // We need to call initialize to get all of our capability handles set up and registered with Trello
 TrelloPowerUp.initialize({
   'card-badges': function(t, options){
-    return getBadges(t);
+    return getCoverBadges(t);
   },
   'card-detail-badges': function(t, options) {
     return getBadges(t);

@@ -1,21 +1,27 @@
 <html>
 <head>
+  <meta charset="utf-8">
   <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
   <style>
-  select { height: 30px; }
-</style>
+    select { height: 30px; }
+  </style>
 <script src="https://p.trellocdn.com/power-up.min.js"></script>
 </head>
 <body>
   <form id="value_form">
     <label for="value_for_me">Value for me:</label>
+    👎
     <input name="value_for_me" id="value_for_me"
            type="range" min="-3" max="3" step="1"
            list="tickmarks">
+    👍
     <label for="value_for_others">Value for others:</label>
+    📉
     <input name="value_for_others" id="value_for_others"
            type="range" min="-3" max="3" step="1"
            list="tickmarks">
+    📈
+
     <br/>
     <button type="submit" class="mod-primary">Save</button>
   </form>

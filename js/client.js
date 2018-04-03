@@ -31,6 +31,7 @@ var getBadges = function(t){
 
 var getBadge = function (data) {
   return {
+      title: 'Value',
       text: `💎 ${data.value_for_me || '-'}/${data.value_for_others || '-'}`,
       color: null,
       callback: cardButtonCallback
